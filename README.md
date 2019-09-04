@@ -1,5 +1,4 @@
 # hello
 
 Hello,world!
-
-![lisp](https://camo.githubusercontent.com/bb8d03185bedb01f64df05cb99809483004d4ce1/687474703a2f2f6c69737065726174692e636f6d2f6c6973706c6f676f5f616c69656e2e7376673f73616e6974697a653d74727565)
+![lisp alien](http://lisperati.com/lisplogo_alien.svg)
