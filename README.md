@@ -1,4 +1,4 @@
 # hello
 
 Hello,world!
-![lisp alien](http://lisperati.com/lisplogo_alien.svg)
+![lisp alien](alien.svg)
