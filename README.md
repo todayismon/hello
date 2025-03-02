@@ -2,7 +2,7 @@
 ![](https://www.python.org/static/img/python-logo.png) 
 大蟒蛇
 
-```python
+```python3
 
 运算符
     +加  -减  *乘  /除(得小数)  //整除(得整数)  %余数  =赋值  ==相等  ( )
