@@ -18,8 +18,8 @@
 >>> 'hello '+'张三'
 'hello 张三'
 
->>> '123'+'456'
-'123456'
+>>> '1'+'2'
+'12'
 
 >>> 12*3
 36
@@ -70,7 +70,7 @@ print(s)
 
 
 
-#import 导入   random 随机(偶然)   choice 选      ---> 抽奖
+#import 导入   random 随机(偶然)   choice 选    ---> 抽奖
 
 # 随机选一件事做
 import random
