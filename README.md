@@ -1,7 +1,3 @@
-# hello
-
-Hello,world!
-![lisp alien](alien.svg)
 
 ![](https://www.python.org/static/img/python-logo.png) 
 大蟒蛇
@@ -66,6 +62,7 @@ False  假
 r=int(input())
 s=3.14*r*r
 print(s)
+
 
 
 2 三角形面积
@@ -176,9 +173,8 @@ else:
 
 
 
-# 分别输入暑假两个月坚持体育锻炼天数，若7月和8月
-锻炼天数均大于等于20天或两个月共锻炼45天（含）以上，
-输出："运动达人"；否则，输出："加油锻炼"
+# 分别输入暑假两个月坚持体育锻炼天数，若7月8月锻炼天数均大于等于20天或两个月共锻炼45天（含）以上，
+# 输出："运动达人"；否则，输出："加油锻炼"
 a=int(input())
 b=int(input())
 if a>=20 and b>=20 or a+b>=45:
@@ -194,6 +190,8 @@ for x in range(1,50):
     if 2*x+4*y==120:
         print("鸡",x,"兔",y)
         break
+
+
 
 
 ```
