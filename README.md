@@ -70,12 +70,12 @@ print(s)
 
 
 
-# 三角形面积
-a=int(input())
-h=int(input())
-s=a*h/2
-print(s)
+#import 导入   random 随机(偶然)   choice 选      ---> 抽奖
 
+# 随机选一件事做
+import random
+task= random.choice(('吃饭','睡觉','打豆豆'))
+print(task)
 
 
 # 大蟒蛇讲故事
@@ -87,7 +87,14 @@ story= ("外边有42度, ", who,"出去遛弯。当走到",where,"时，小伙�
        "。我全程目睹，但没有慌。因为", who, "是一个270斤的胖子，天气又辣么热。:)")
 print(*story)
 
-#import 导入   random 随机(偶然)   choice 选      ---> 抽奖
+
+
+# 三角形面积
+a=int(input())
+h=int(input())
+s=a*h/2
+print(s)
+
 
 
 # 梯形面积 
@@ -194,6 +201,11 @@ for x in range(1,50):
         print("鸡",x,"兔",y)
         break
 
+
+
+# 生成二维码qr
+import qrcode
+qrcode.make('http://www.bing.com').save('bing.png')
 
 
 
