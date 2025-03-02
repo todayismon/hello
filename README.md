@@ -2,7 +2,7 @@
 ![](https://www.python.org/static/img/python-logo.png) 
 大蟒蛇
 
-```python3
+```
 
 运算符
     +加  -减  *乘  /除(得小数)  //整除(得整数)  %余数  =赋值  ==相等  ( )
@@ -52,20 +52,25 @@ False
 input  输入字符串
 print  输出
 int    变成整数
-eval   去掉引号。例如 "1+2"是字符串，eval("1+2")是 3
+eval   去掉引号。例如 "1+2"是字符串，eval("1+2") 是 3
+
 True   真
 False  假
 
+not    相反
+and    并且
+or     或者
+
 变量 ：存储单元(超市的存包柜)
 
-1 输入一个圆的半径(整数),输出它的面积
+# 输入一个圆的半径(整数),输出它的面积
 r=int(input())
 s=3.14*r*r
 print(s)
 
 
 
-2 三角形面积
+# 三角形面积
 a=int(input())
 h=int(input())
 s=a*h/2
@@ -73,7 +78,6 @@ print(s)
 
 
 
-3
 # 大蟒蛇讲故事
 import random  
 who= random.choice(("加菲猫","猪八戒","圣诞老人","米老鼠"))
@@ -83,8 +87,7 @@ story= ("外边有42度, ", who,"出去遛弯。当走到",where,"时，小伙�
        "。我全程目睹，但没有慌。因为", who, "是一个270斤的胖子，天气又辣么热。:)")
 print(*story)
 
-#import 导入   random 随机(偶然)   choice 选
-
+#import 导入   random 随机(偶然)   choice 选      ---> 抽奖
 
 
 # 梯形面积 
