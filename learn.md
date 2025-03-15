@@ -42,5 +42,5 @@ v= a[math.floor(1.5*m)-1][0]
 i= bisect.bisect_right(a, v, key=lambda c:c[0])
 print(-v,i)
 for x,y in a[:i]:
-    print(y,-x)
+	print(y,-x)
 ```
