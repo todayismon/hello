@@ -13,6 +13,7 @@ def dfs(x):
 	return '+'.join(s)
 print(dfs(int(input())))
 
+
 #1116
 import sys
 n,*a= map(int, sys.stdin.read().split())
@@ -22,6 +23,7 @@ for i in range(n):
 		if a[j]>a[i]:
 			c+= 1
 print(c)
+
 
 #5143
 import sys,math
@@ -33,6 +35,7 @@ for i in range(n-1):
 	z1,y1,x1= a[i+1]
 	q+= math.sqrt((z1-z0)**2+(y1-y0)**2+(x1-x0)**2)
 print(round(q,3))
+
 
 #1068
 import sys,math,bisect
