@@ -123,3 +123,71 @@ int main(){
 	}
 	return 0;
 }
+
+
+
+//p5650 0111100101 0的个数减去1的个数最大
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	char c;
+	int a=0, q=-1;
+	while(cin >> c){
+		if(c=='0'){
+			a++;
+			if(a>q)q=a;
+		}else{
+			a--;
+			if(a<0)a=0;
+		}
+	}
+	cout << q <<'\n';
+	return 0;
+}
+
+
+
+//字符串加密 +k
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	char c, d;
+	int k;
+	cin >> k;
+	k= k%26;
+	while(cin >> c){
+		if(c+k>'z')
+			d=c+k-26;
+		else
+			d=c+k;
+		cout << d;
+	}
+	return 0;
+}
+
+
+
+//p1115 最大子段和
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int n,c;
+	int a=0, q= INT_MIN;
+	cin >>n;
+	while(n--){
+		cin >> c;
+		a+= c;
+		if(c > 0){
+			q=max(q,a);
+		}else if(c > q){
+			q=max(q,c);
+		}else{
+			a=max(0,a);
+		}
+	}
+	cout << q <<'\n';
+	return 0;
+}
