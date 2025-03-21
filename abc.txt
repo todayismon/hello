@@ -1,3 +1,4 @@
+:)
 //p9748 小苹果
 #include <iostream>
 using namespace std;
