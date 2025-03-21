@@ -97,7 +97,7 @@ set <int> s;
 int main(){
 	int t,n,m,k,x,y,d;
 	cin >>t;
-	for(int e=1;e<=t;e++){
+	while(t--){
 		cin >>n>>m>>k>>x>>y>>d;
 		fill(c[0], c[0]+1002*1002, 0);
 		for(int i=1;i<=n;i++){
