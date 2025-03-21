@@ -1,0 +1,125 @@
+//p9748 小苹果
+#include <iostream>
+using namespace std;
+
+int main(){
+	int n, day=0, d=0;
+	cin >>n;
+	while(n){
+		day++;
+		if(d==0 and n%3==1){ //末永远末
+			d= day;   //拿走n
+		}
+		n-= (n+2)/3;
+	}
+	cout << day <<' ' << d <<'\n';
+	return 0;
+}
+
+
+
+//p7909 分糖果
+#include <iostream>
+using namespace std;
+
+int main(){
+	long n,l,r;
+	cin >>n>>l>>r; // n人数 l最少 r最多
+	if( r/n > l/n ){  //最少最多之间有n的倍数
+		cout << n-1;
+	}else{
+		cout << r%n;
+	}
+	return 0;
+}
+
+
+
+//p9749 公路加油
+#include <iostream>
+using namespace std;
+
+int main() {
+	long n,d;
+	cin >>n >>d;
+	long s[n+1]={}; //各站离起点1多远
+	for(int i=2;i<=n;i++){
+		cin >>s[i];
+		s[i]+= s[i-1];
+	}
+	long x,y;  //最便宜x 当前站油价y
+	cin >>x;
+	long a= 0; //这次加多少升油
+	long t= 0; //总共走了多远
+	long q= 0; //总共花多少钱
+	for(int i=2;i<n;i++){
+		cin >>y;
+		if(y<x){
+			a= (s[i]-t+d-1)/d;
+			t+= a*d;
+			q+= a*x;
+			x= y;
+		}
+	}
+	cin >>y;
+	q+= (s[n]-t+d-1)/d *x;
+	cout << q <<'\n';
+	return 0;
+}
+
+
+
+//p11227 扑克牌
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+	set <string> poker;  //集合 自动排除重复
+	int n; string s;
+	cin >>n;
+	for(int i=0;i<n;i++){
+		cin >>s;
+		poker.insert(s);
+	}
+	cout << 52 - poker.size();
+	return 0;
+}
+
+
+
+//p11228 地图探险
+#include <bits/stdc++.h>
+using namespace std;
+struct point{ int x,y;};
+point w[]={{0,1},{1,0},{0,-1},{-1,0}}; //右下左上
+bool c[1002][1002]; //地图 1空地 0障碍
+set <int> s;
+
+int main(){
+	int t,n,m,k,x,y,d;
+	cin >>t;
+	for(int e=1;e<=t;e++){
+		cin >>n>>m>>k>>x>>y>>d;
+		fill(c[0], c[0]+1002*1002, 0);
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=m;j++){
+				char o;
+				cin >>o;
+				if(o=='.') c[i][j]=1;
+			}
+		}
+		//walk
+		s.clear();
+		s.insert(x*10000+y);
+		for(int i=1;i<=k;i++){
+			if(c[x+ w[d].x][y+ w[d].y]){
+				x+= w[d].x;  //前进
+				y+= w[d].y;
+				s.insert(x*10000+y);	
+			}else{
+				d=(d+1)%4;   //右转
+			}
+		}
+		cout <<s.size()<<'\n';
+	}
+	return 0;
+}
