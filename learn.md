@@ -2,8 +2,8 @@
 
 <summary>Tips </summary>
 
->[!TIP]
->this is a tip.
+> [!TIP]
+> this is a tip.
 
 ```ruby
    puts "Hello World"
