@@ -1,25 +1,4 @@
-<details>
-
-<summary>Tips </summary>
-qwerttyyuuiiiooooooooooooppppppppp
-iiiiii
-
-ioioioooooo
-
-</details>
-
-```ruby
-   puts "Hello World"
-```
-
-
-
-> [!TIP]
-> this is a tip.
-
-
-
-```python
+```plain
 #1010 任意大整数
 def dfs(x):
 	s= ()
