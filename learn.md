@@ -2,14 +2,14 @@
 
 <summary>Tips </summary>
 
-> [!TIP]
-> this is a tip.
-
 ```ruby
    puts "Hello World"
 ```
 
 </details>
+
+> [!TIP]
+> this is a tip.
 
 
 
