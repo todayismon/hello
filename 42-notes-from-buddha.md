@@ -1,4 +1,4 @@
-42-notes-from buddha
+42 notes from buddha
 
 佛说四十二章经
 
