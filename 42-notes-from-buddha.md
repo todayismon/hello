@@ -1,5 +1,3 @@
-42 notes from buddha
-
 佛说四十二章经
 
 后汉摩腾、竺法兰共译
