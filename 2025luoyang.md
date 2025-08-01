@@ -2,21 +2,15 @@
 
 时间：2025 年 6 月 29 日 14:30——17:30
 
-题目名称 色彩 电池电量 小木屋 商品打折
-
-可执行文件名 color power house sale
-
-输入文件名 color.in power.in house.in sale.in
-
-输出文件名 color.out power.out house.out sale.out
-
-每个测试点时限 1 2 2 2
-
-内存限制 256MB 512MB 512MB 512MB
-
-子任务数目 8 10 50 15
-
-测试点是否等分 是 是 是 是
+| 题目名称 | 色彩 |电池电量 | 小木屋 | 商品打折 |
+---|---|---|---|---
+可执行文件名|color|power|house|sale
+输入文件名|color.in|power.in|house.in|sale.in
+输出文件名|color.out|power.out|house.out|sale.out
+每个测试点时限|1|2|2|2
+内存限制|256MB|512MB|512MB|512MB
+子任务数目|8|10|50|15
+测试点是否等分|是|是|是|是
 
 注意事项（请仔细阅读）:
 
@@ -29,7 +23,7 @@
 
 ---
 
-- 色彩（color）
+- **色彩 (color)**
 
 【题目描述】
 
@@ -91,7 +85,7 @@ Four
 
 ---
 
-- 电量危机（power）
+- **电量危机 (power)**
 
 【题目描述】
 
@@ -189,7 +183,7 @@ No
 
 ---
 
-- 小木屋（house）
+- **小木屋 (house)**
 
 【题目描述】
 
@@ -272,7 +266,7 @@ No
 
 ---
 
-- 商品打折（sale)
+- **商品打折 (sale)**
 
 【题目描述】 at_abc308_f
 
