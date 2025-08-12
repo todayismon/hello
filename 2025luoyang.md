@@ -2,7 +2,7 @@
 
 时间：2025 年 6 月 29 日 14:30——17:30
 
-| 题目名称 | 色彩 |电池电量 | 小木屋 | 商品打折 |
+ 题目名称 | 色彩 |电池电量 | 小木屋 | 商品打折 
 ---|---|---|---|---
 可执行文件名|color|power|house|sale
 输入文件名|color.in|power.in|house.in|sale.in
@@ -89,7 +89,7 @@ Four
 
 【题目描述】
 
-小洛今天去旅游，但他只有一个电池容量为 N 的手机，在时间为 0.5, 1.5, 2.5, ...（即 n + 0.5，n 为整数）的时刻，手机的电量会减少 1，如果电量已经为 0，则不再减少。小洛会访问 M 家店。在第 i 家店，他会从时间 Ai 停留到 Bi。在这期间，手机处于充电状态，即在每个 n + 0.5 的时刻，电量会增加1。电量的上限为 N，即电量不会超过 N。小洛开始时（时间为0）手机是充满电的（电量为 N）。他在时间 T 时回家。判断小洛在外出旅游期间手机电量是否充足，即判断手机电量是否从未降到 0。
+小洛今天去旅游，但他只有一个电池容量为 N 的手机，在时间为 0.5, 1.5, 2.5, ...（即 n + 0.5，n 为整数）的时刻，手机的电量会减少 1，如果电量已经为 0，则不再减少。小洛会访问 M 家店。在第 i 家店，他会从时间 Ai 停留到 Bi。在这期间，手机处于充电状态，即在每个 n + 0.5 的时刻，电量会增加1。电量的上限为 N，即电量不会超过 N。小洛开始时（时间为0）手机是充满电的（电量为 N）。他在时间 T 时回到家。判断小洛在外出旅游期间手机电量是否充足，即判断手机电量是否从未降到 0。
 
 【输入格式】
 
@@ -183,7 +183,7 @@ No
 
 ---
 
-- **小木屋 (house)**
+- **小木屋 (house)**  at_abc367_d
 
 【题目描述】
 
@@ -266,9 +266,9 @@ No
 
 ---
 
-- **商品打折 (sale)**
+- **商品打折 (sale)**  at_abc308_f
 
-【题目描述】 at_abc308_f
+【题目描述】
 
 小洛同学在商场中有心仪的 n 个商品想要购买，每个商品价格为 pi 元，有 m 张优惠券，第 i 张优惠券至少要购买价格为 Li 元的商品才能折扣 Di 元，每张优惠券只能用一次，同一物品只能使用一张优惠券。求怎么才能用最少的钱购买所有商品。
 
@@ -314,4 +314,198 @@ No
 
 1≤pi≤10^9
 
+---
+c++
+```plain
+//color
+#include <iostream>
+using namespace std;
 
+int main(){
+	int p=0,w=0,g=0,y=0,n; char c;
+	cin >>n;
+	while(n--){
+		cin >>c;
+		if(c=='P')p=1;
+		if(c=='W')w=1;
+		if(c=='G')g=1;
+		if(c=='Y')y=1;
+	}
+	if(p+w+g+y==3){
+		cout << "Three\n";
+	}else{
+		cout << "Four\n";
+	}
+	return 0;
+}
+```
+
+```plain
+//power
+#include <iostream>
+using namespace std;
+
+int main(){
+	int n,m,t,p;
+	cin >>n>>m>>t;
+	p=n;
+	int a=0,b=0; bool ok=1; //a->b
+	while(m--){
+		cin >>b;
+		p-= b-a;   //-
+		if(p<=0){
+			ok=0;
+			break;
+		}
+		a=b;
+		cin >>b;
+		p+= b-a;   //+
+		if(p>n){
+			p=n;
+		}
+		a=b;
+	}
+	if(ok){      //...home
+		ok= p > t-b;
+	}
+	if(ok){
+		cout << "Yes\n";
+	}else{
+		cout << "No\n";
+	}
+	return 0;
+}
+```
+
+```plain
+//house   at_abc367_d lake
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int n,m,a,r[200001]={}; //remainder
+	cin>>n>>m;
+	cin >>a;
+	r[0]= a%m;
+	for(int i=1;i<n;i++){
+		cin>>a;
+		r[i]= (r[i-1]+a)%m;
+	}
+	long long q=0, c[1000001]={}; //count
+	for(int i=0;i<n;i++){
+		q+= c[r[i]] + c[(r[i]+m-r[n-1])%m];
+		c[r[i]]++;
+	}
+	cout << q <<'\n';
+	return 0;
+}
+
+```
+
+```plain
+//sale   at_abc308_f Vouchers
+//依次对每件商品 找所有可用的优惠券 从中取优惠最高的一张
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int n,m;
+	cin >>n>>m;
+	int p[n]={};
+	pair <int,int> v[m];
+	for(int i=0;i<n;i++){
+		cin >>p[i];  //price
+	}
+	for(int i=0;i<m;i++){
+		cin >>v[i].first;  //least
+	}
+	for(int i=0;i<m;i++){
+		cin >>v[i].second; //discount
+	}
+	sort(p,p+n);
+	sort(v,v+m);
+	priority_queue < int > ok;
+	long long s=0;
+	int j=0;
+	for(int i=0;i<n;i++){
+		s+= p[i];
+		while(j<m and p[i]>=v[j].first){
+			ok.emplace(v[j].second);  //push
+			j++;
+		}
+		if(!ok.empty()){
+			s-= ok.top();
+			ok.pop();
+		}
+	}
+	cout << s <<'\n';
+	return 0;
+}
+```
+---
+python
+```plain
+#color
+input()
+n=len(set(input().split()))
+if n==3:
+    print('Three')
+else:
+    print('Four')
+```
+
+```plain
+#power
+n,m,t= map(int, input().split())
+p= n
+w= 0
+for _ in range(m):
+    a,b= map(int,input().split())
+    p-=a-w
+    if p<=0:
+        print('No')
+        break
+    p+=b-a
+    if p>n:
+        p=n
+    w= b
+else:
+    print('Yes' if p>t-b else 'No')
+
+```
+
+```plain
+#at_abc367_d Pedometer
+import sys
+n,m,*a= map(int, sys.stdin.read().split())
+c= [0]*m
+s= sum(a)%m
+q= 0
+x= 0
+for i in range(n):
+    x= (x+a[i])%m
+    q+= c[x] + c[(m+x-s)%m]
+    c[x]+= 1
+print(q)
+```
+
+```plain
+#at_abc308_f Vouchers
+#对每件商品 找所有可用的优惠券 从中取优惠最多的一张
+from heapq import heappush,heappop
+n,m=map(int,input().split())
+p=sorted(map(int,input().split()))
+l=map(int,input().split())
+d=map(int,input().split())
+v=sorted(zip(l,d))
+ok=[]
+ans= sum(p)
+i= 0   #优惠券序号i
+for x in p:
+    while i<m and v[i][0]<=x:
+        heappush(ok, -v[i][1])
+        i+= 1
+    if len(ok):
+        ans+= heappop(ok)
+print(ans)
+```
