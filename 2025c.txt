@@ -1,5 +1,4 @@
 ```
-
  [2025年 20](https://www.luogu.com.cn/contest/269036#problems)
 
 //p8739 重复字符串 k次 ↓↓↓
@@ -50,19 +49,17 @@ string s,t;
 //b3625 迷宫寻路
 #include<bits/stdc++.h>
 using namespace std;
-bool ok[105][105]; // 1空 0墙
+bool a[105][105]; // 1空 0墙
 int n,m;
-string over="No";
+bool ok=false;
 void dfs(int x, int y){
-	if(x==n && y==m){ //到了
-		over="Yes";
-		return;
-	}
-	ok[x][y]=0;
-	if(ok[x-1][y]) dfs(x-1,y);
-	if(ok[x+1][y]) dfs(x+1,y);
-	if(ok[x][y-1]) dfs(x,y-1);
-	if(ok[x][y+1]) dfs(x,y+1);
+	if(ok or not a[x][y])return;
+	if(x==n and y==m){ ok=true;return; }
+	a[x][y]=0;
+	dfs(x-1,y);
+	dfs(x+1,y);
+	dfs(x,y-1);
+	dfs(x,y+1);
 }
 int main(){
 	cin>>n>>m;
@@ -70,11 +67,11 @@ int main(){
 		for(int j=1;j<=m;j++){
 			char c;
 			cin >>c;
-			ok[i][j]= (c=='.');
+			a[i][j]= (c=='.');
 		}
 	}
-	dfs(1,1); //出发
-	cout <<over;
+	dfs(1,1);
+	cout << (ok ?"Yes":"No");
 	return 0;
 }
 
@@ -372,7 +369,6 @@ print(f'{gray(k):0{n}b}')
 
 
  [第 10 期](https://www.luogu.com.cn/contest/261873#problems)
-
 
 //P2240 部分背包问题 阿里巴巴
 #include <bits/stdc++.h>
@@ -902,6 +898,7 @@ print(' '.join(map(str,d)))
 
 
  [2025年 13](https://www.luogu.com.cn/contest/253045#problems)
+
 //P1927 防护伞
 #include <bits/stdc++.h>
 using namespace std;
@@ -1065,6 +1062,7 @@ print(' '.join(map(str,q)))   #print(*q)
 
 
  [2025年 11](https://www.luogu.com.cn/contest/250622#problems)
+
 //p8195 小智的疑惑 print(input().count('chuanzhi'))
 #include <bits/stdc++.h>
 using namespace std;
@@ -1713,7 +1711,6 @@ for x in n:
 
  [2025年 6](https://www.luogu.com.cn/contest/241000#problems)
 
-
 //p1980 计数问题
 #include <iostream>
 using namespace std;
@@ -2003,6 +2000,7 @@ int main(){
 }
 
  [第 8 期](https://www.luogu.com.cn/contest/237777#problems)
+
 //反转数字
 #include <bits/stdc++.h>
 using namespace std;
@@ -2421,4 +2419,3 @@ int main(){
 }
 
 ```
-start here ...
