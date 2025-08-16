@@ -1,3 +1,4 @@
+```
 
  [2025年 20](https://www.luogu.com.cn/contest/269036#problems)
 
@@ -1711,6 +1712,8 @@ for x in n:
 	print(*reversed(v), sep='+')
 
  [2025年 6](https://www.luogu.com.cn/contest/241000#problems)
+
+
 //p1980 计数问题
 #include <iostream>
 using namespace std;
@@ -2356,7 +2359,7 @@ int main(){
 using namespace std;
 
 int main(){
-  cin.tie(0)->sync_with_stdio(0);
+	cin.tie(0)->sync_with_stdio(0);
 	int n;
 	cin >>n;
 	int a[n]={};
@@ -2417,4 +2420,5 @@ int main(){
 	return 0;
 }
 
-start from here ...
+```
+start here ...
