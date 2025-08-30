@@ -235,6 +235,20 @@ for i in range(n):
 print(len(set(b)))
 
 
+ [洛谷基础赛25](https://www.luogu.com.cn/contest/241168)
+
+#A 只可上下右 能走多少格
+input()
+a= list(map(int,input().split()))
+c= 0
+w= a[-1]
+for x in reversed(a):
+    if x<w:
+        w=x
+    c+= w
+print(c)
+
+
  [第 11 期](https://www.luogu.com.cn/contest/270318#problems)
 
 //b4037 N字
