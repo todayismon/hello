@@ -1,4 +1,97 @@
 ```
+ [2025年 21](https://www.luogu.com.cn/contest/273288)
+
+#p1958 上学路线 多少条
+n,m= map(int,input().split())
+a=[[0]*(m+1) for _ in range(n+1)]
+for _ in range(int(input())):
+    x,y= map(int,input().split())
+    a[x][y]=1
+q=0
+def dfs(x,y):
+    global q
+    if (x,y)==(n,m):
+        q+=1
+        return
+    a[x][y]=1
+    if x+1<=n and a[x+1][y]==0:
+        dfs(x+1,y)
+    if y+1<=m and a[x][y+1]==0:
+        dfs(x,y+1)
+    a[x][y]=0
+
+dfs(1,1)
+print(q)
+
+
+#p1294 高手去散步
+import sys
+n,m,*t= map(int, sys.stdin.read().split())
+d= [[0]*(n+1) for _ in range(n+1)]
+for i in range(0,m+m+m,3):
+    a,b,c= t[i:i+3]
+    d[a][b]= d[b][a]= c
+q=0
+v=[0]*(n+1)
+def dfs(here,s=0):
+    global q
+    if s>q:
+        q=s
+    v[here]=1
+    for i in range(1,n+1):
+        if v[i]==0 and d[here][i]>0:
+            dfs(i, s+d[here][i])
+    v[here]=0
+
+for i in range(1,n+1):
+    dfs(i)
+print(q)
+
+
+#p1657 选书
+import sys
+a= sys.stdin.read().split()
+n= int(a[0])
+b= tuple((a[i],a[i+1]) for i in range(1,len(a),2))
+q=0
+def pick(i,books=[]):
+    global n,q
+    if i==n:
+        q+= 1
+        return
+    x,y= b[i]
+    if x not in books:
+        pick(i+1, books+[x])
+    if y not in books:
+        pick(i+1, books+[y])
+
+pick(0)
+print(q)
+
+
+#p1467 循环数
+def ok(s):
+    if s.count('0'):
+        return 0
+    l=len(s)
+    if l!=len(set(s)):
+        return 0
+    v=[0]*10
+    a=0
+    for _ in range(l):  #a-->b
+        b=(a+int(s[a]))%l
+        if v[b]==1:
+            return 0
+        v[b]=1
+        a=b
+    else:
+        return 1
+
+n= int(input())+1
+while not ok(str(n)):
+    n+=1
+print(n)
+
 
  [第 11 期](https://www.luogu.com.cn/contest/270318#problems)
 
