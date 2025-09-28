@@ -112,9 +112,11 @@ Bridge snowflake 0.0.0.0:1
 
 7. 示例完整 torrc 段落（可直接复制替换 URL）
 
+```
 UseBridges 1
 ClientTransportPlugin snowflake exec /usr/local/bin/snowflake-client –url=https://snowflake-broker.torproject.net/
 Bridge snowflake 0.0.0.0:1
+```
 
 是否需要我帮你做下列任一项？
 
