@@ -174,19 +174,16 @@ int main(){
 using namespace std;
 
 int main(){
-	int n,c;
-	int a=0, q= INT_MIN;
+    cin.tie(0) -> sync_with_stdio(0);
+	int n,x;
 	cin >>n;
+	n--;
+	cin >>x;
+	int c=x, q=x; //cur, max
 	while(n--){
-		cin >> c;
-		a+= c;
-		if(c > 0){
-			q=max(q,a);
-		}else if(c > q){
-			q=max(q,c);
-		}else{
-			a=max(0,a);
-		}
+		cin >>x;
+		c= c>0 ? c+x : x;
+		q= max(q,c);
 	}
 	cout << q <<'\n';
 	return 0;
